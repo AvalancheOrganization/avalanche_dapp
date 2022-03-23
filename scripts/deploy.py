@@ -10,6 +10,7 @@ from brownie import (
 from web3 import Web3
 
 from scripts.helpful_scripts import get_account
+from scripts.abi_storage import store_abi
 
 
 def deploy():
@@ -45,6 +46,11 @@ def deploy():
         eternalStorage.address, {"from": account}, publish_source=publish_source
     )
     print("transactionV1 deployed")
+
+    store_abi("Buffer1V1")
+    store_abi("PayloadTruckV1")
+    store_abi("SourceV1")
+    store_abi("TransactionV1")
 
 
 def main():
